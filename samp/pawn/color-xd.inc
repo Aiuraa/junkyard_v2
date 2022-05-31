@@ -39,6 +39,15 @@
 
 #define _INC_color_xd
 
+#if !defined string:
+    #define string: 
+#endif
+
+#if !defined hex:
+    #define hex:
+#endif
+
+
 /*
     Usage:
     #define MAX_ENERGY_COLORS 10 // if you want 10 colors per 10 value of your energy bar
@@ -66,7 +75,7 @@ static stock gss_arrEnergyColors[INTERNAL_ENERGY_COLOR_VALUE] = {0xFFFFFF, ...};
     Notes:
     Always leave + 1 value.
 */
-stock bool:SetEnergyValueColor(hex:arrValues[MAX_ENERGY_COLORS + 1])
+stock bool:SetEnergyValueColor(hex:colorValues[MAX_ENERGY_COLORS + 1])
 {
     gss_arrEnergyColors = arrValues;
     return 1;
