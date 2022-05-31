@@ -92,9 +92,10 @@ stock hex:ConvertEnergyValueToColor(Float:currentValue)
 {
     new col = floatround(currentValue, floatround_round);
 
-    // Fixing negative value and vale below 10 should be set as value 10 until 0
+    // Fixing negative value and value below 10 should be set as value 10 until 0
     // Because anything below 10 will be set to 0 by modulo operator (actually it's 0.5 but we're not writing floats here)
-    col = ((col > MAX_ENERGY_COLORS) ? MAX_ENERGY_COLORS : ((5 <= col <= 10) ? 10 : max(col, 0)));
+    // Also, this fixing value above the MAX_ENERGY_COLORS
+    col = ((col > MAX_ENERGY_COLORS * 10) ? MAX_ENERGY_COLORS : ((5 <= col <= 10) ? 10 : max(col, 0)));
     return (gss_arrEnergyColors[col % 10]);
 }
 
