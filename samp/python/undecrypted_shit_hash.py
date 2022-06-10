@@ -58,7 +58,7 @@ def find_collision(hash: int, len: int) -> str:
     return rand_str
 
 if __name__ == '__main__':
-    hash = udb_hash('hallo kacang hijau 123')
-    collisionText = find_collision(hash)
-    print(f'Orig: hallo kacang hijau 123 | Hash: {hash} | Collision Text: {collisionText} | Collision Hash: {udb_hash(collisionText)}')
+    hash = udb_hash('xd123')
+    collisionText = find_collision(hash, 5)
+    print(f'Orig: xd123 | Hash: {hash} | Collision Text: {collisionText} | Collision Hash: {udb_hash(collisionText)}')
    
